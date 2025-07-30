@@ -45,3 +45,6 @@ tornado==6.5.1
 traitlets==5.14.3
 tzdata==2025.2
 wcwidth==0.2.13
+optuna>=3.0.0
+xgboost>=1.7.0
+catboost>=1.2.0
