@@ -22,19 +22,8 @@ Predicting video performance metrics (views, likes, comments) can help creators 
 
 ---
 
-## 📦 Data Collection
-
-Data is collected via the **YouTube Data API v3**, including the following features:
-
-- `video_id`, `channel_id`, `channel_title`
-- `category_id`, `country`
-- Engagement metrics at two timestamps:
-  - `view_count_initial`, `like_count_initial`, `comment_count_initial`
-  - `view_count_final`, `like_count_final`, `comment_count_final`
-- Channel-level metrics:
-  - `c_view_count_initial`, `c_subscriber_count_initial`
-
-Data is saved and processed in a structured DataFrame format.
+## 📄 Dataset Documentation
+See full details in [data_card.md](data/raw/data_card.md)
 
 ---
 
