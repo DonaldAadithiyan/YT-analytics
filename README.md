@@ -23,7 +23,7 @@ Predicting video performance metrics (views, likes, comments) can help creators 
 ---
 
 ## 📄 Dataset Documentation
-See full details in [data_card.md](.data/raw/data_card.md)
+See full details in [data_card.md](data/raw/data_card.md)
 
 ---
 
