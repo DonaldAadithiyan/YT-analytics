@@ -18,7 +18,7 @@ This project predicts the future performance of YouTube videos — including vie
 
 ## 📖 Overview
 
-Predicting video performance metrics (views, likes, comments) can help creators and analysts understand what content performs well. We use data from the YouTube Data API and train a multi-output regression model (LightGBM) to forecast future values.
+Predicting video performance metrics (views, likes, comments) can help creators and analysts understand what content performs well. We use data from the YouTube Data API and train a multi-output regression models and blend the results to forecast future values.
 
 ---
 
@@ -51,15 +51,18 @@ Key feature transformations:
 
 ## ⚙️ Modeling
 
-We use **LightGBM** wrapped with `MultiOutputRegressor` to predict multiple outputs simultaneously:
+We use models like **XGBoost and Tree-based models like LightGBM, RandomForestRegressor and Catboost** wrapped with `MultiOutputRegressor` to predict multiple outputs simultaneously:
 
 - `view_count_final`
 - `like_count_final`
 - `view_count_initial`
 - `like_count_initial`
 
-We perform **GridSearchCV** for hyperparameter tuning and cross-validation.
+We perform **Bayesian Optimization** using **Optuna** for hyperparameter tuning of the said models.
 
+Then perform blending of the models through a **Meta Model** , **Linear Regression**
+
+Additionally, **Quantile Regression** was performed by splitting the dataset into 3.
 ---
 
 ## 📊 Evaluation
@@ -72,3 +75,7 @@ We use **Mean Absolute Error (MAE)** to evaluate performance:
 - view_count_final: XXXX
 - like_count_final: XXXX
 - comment_count_final: XXXX
+
+---
+
+##Contributors
