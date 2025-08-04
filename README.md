@@ -18,12 +18,32 @@ This project predicts the future performance of YouTube videos — including vie
 
 ## 📖 Overview
 
+<<<<<<< HEAD
+Predicting video performance metrics (views, likes, comments) can help creators and analysts understand what content performs well. We use data from the YouTube Data API and train a multi-output regression models and blend the results to forecast future values.
+
+---
+
+## 📦 Data Collection
+
+Data is collected via the **YouTube Data API v3**, including the following features:
+
+- `video_id`, `channel_id`, `channel_title`
+- `category_id`, `country`
+- Engagement metrics at two timestamps:
+  - `view_count_initial`, `like_count_initial`, `comment_count_initial`
+  - `view_count_final`, `like_count_final`, `comment_count_final`
+- Channel-level metrics:
+  - `c_view_count_initial`, `c_subscriber_count_initial`
+
+Data is saved and processed in a structured DataFrame format.
+=======
 Predicting video performance metrics (views, likes, comments) can help creators and analysts understand what content performs well. We use data from the YouTube Data API and train a multi-output regression model (LightGBM) to forecast future values.
 
 ---
 
 ## 📄 Dataset Documentation
 See full details in [data_card.md](data/raw/data_card.md)
+>>>>>>> fb0940e8ab4b130178974cf0374a004fef94cf00
 
 ---
 
@@ -40,15 +60,27 @@ Key feature transformations:
 
 ## ⚙️ Modeling
 
+<<<<<<< HEAD
+We use models like **XGBoost and Tree-based models like LightGBM, RandomForestRegressor and Catboost** wrapped with `MultiOutputRegressor` to predict multiple outputs simultaneously:
+=======
 We use **LightGBM** wrapped with `MultiOutputRegressor` to predict multiple outputs simultaneously:
+>>>>>>> fb0940e8ab4b130178974cf0374a004fef94cf00
 
 - `view_count_final`
 - `like_count_final`
 - `view_count_initial`
 - `like_count_initial`
 
+<<<<<<< HEAD
+We perform **Bayesian Optimization** using **Optuna** for hyperparameter tuning of the said models.
+
+Then perform blending of the models through a **Meta Model** , **Linear Regression**
+
+Additionally, **Quantile Regression** was performed by splitting the dataset into 3.
+=======
 We perform **GridSearchCV** for hyperparameter tuning and cross-validation.
 
+>>>>>>> fb0940e8ab4b130178974cf0374a004fef94cf00
 ---
 
 ## 📊 Evaluation
@@ -61,3 +93,10 @@ We use **Mean Absolute Error (MAE)** to evaluate performance:
 - view_count_final: XXXX
 - like_count_final: XXXX
 - comment_count_final: XXXX
+<<<<<<< HEAD
+
+---
+
+##Contributors
+=======
+>>>>>>> fb0940e8ab4b130178974cf0374a004fef94cf00
