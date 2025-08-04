@@ -48,6 +48,9 @@ wcwidth==0.2.13
 optuna>=3.0.0
 xgboost>=1.7.0
 catboost>=1.2.0
+<<<<<<< HEAD
 mlflow>=2.0.0
 requests>=2.30.0
 papermill>=0.6.0
+=======
+>>>>>>> fb0940e8ab4b130178974cf0374a004fef94cf00
