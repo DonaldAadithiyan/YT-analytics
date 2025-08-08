@@ -1,6 +1,6 @@
 import pandas as pd
 import pytest
-from src.features import YouTubeFeatureEngineer
+from youtube_first_hour.features import YouTubeFeatureEngineer
 
 def test_feature_engineering():
     """Test the complete feature engineering pipeline"""
