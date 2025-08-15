@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import csv
 from datetime import datetime
 
 class YouTubeFeatureEngineer:
@@ -147,7 +148,9 @@ def process_youtube_data(input_file: str, output_file: str = None) -> pd.DataFra
     
     # Load data
     print("Loading raw data...")
-    df = pd.read_csv(input_file)
+    df = pd.read_csv(input_file, engine="python", 
+                     quoting=csv.QUOTE_ALL,
+                     on_bad_lines='skip')
     print(f"Loaded {len(df)} rows")
     
     # Initialize feature engineer
